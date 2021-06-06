@@ -15,6 +15,11 @@ function App() {
   const [stateTop, setStateTop] = useState([]);
   const [stateSports, setStateSocial] = useState([]);
   const [stateContry, setStateContry] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [search, setSearch] = useState("");
+
+
+
   useEffect(() => {
 
     fetch("https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=174101a12d3444e793a0e2f34d414844")
@@ -32,6 +37,16 @@ function App() {
 
   }, [])
 
+  const filterArticles = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+
+  }
+  const searchedData = (e) => {
+    e.preventDefault();
+    setSearch(inputValue)
+    console.log(stateTop.filter(d => d.title.toLowerCase().includes(search.toLowerCase())));
+  }
   return (
     <div>
 
@@ -41,29 +56,29 @@ function App() {
 
       <Footer />
       <BrowserRouter>
-        <Header />
+        <Header filterArticles={filterArticles} searchedData={searchedData} />
         <Routes>
           <Route path="/top" element={
-            stateTop.map((value, key) => {
+            stateTop.filter(d => d.title.toLowerCase().includes(search.toLowerCase())).map((value, key) => {
               return <Newscard key={key} {...value} />
             })} />
 
-          <Route path="/sport" element={
+          {/* <Route path="/sport" element={
             stateSports.map((value, key) => {
               return <Newscard key={key} {...value} />
-            })} />
+            })} /> */}
 
           <Route path="/tech" element={
-            statetech.map((value, key) => {
+            statetech.filter(d => d.title.toLowerCase().includes(search.toLowerCase())).map((value, key) => {
               return <Newscard key={key} {...value} />
             })}>
 
             <Route path="detail" element={
               <Detail />} />
           </Route>
-          
+
           <Route path="/contry" element={
-            stateContry.map((value, key) => {
+            stateContry.filter(d => d.title.toLowerCase().includes(search.toLowerCase())).map((value, key) => {
               return <Newscard key={key} {...value} />
             })} />
 
