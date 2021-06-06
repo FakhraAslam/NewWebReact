@@ -3,7 +3,7 @@ import{Link} from 'react-router-dom';
 const Header = () => {
     return (
   
-        <nav className="navbar  navbar-expand-lg navbar-dark app-bg">
+        <nav className="navbar  navbar-expand-lg navbar-dark app-bg stickyNav" >
   <div className="container-fluid">
     <a className="navbar-brand "style={{color:"black"}} href="#" >News Alert</a>
    
@@ -16,16 +16,12 @@ const Header = () => {
        
         <li className="nav-item">
           {/* <a className="nav-link active" aria-current="page" href="#">Sport News</a> */}
-          <Link  className="nav-link active" aria-current="page" to="/sport" >Sport News</Link>
+          <Link  className="nav-link active" aria-current="page" to="/sport" >Social News</Link>
         </li>
        
         <li className="nav-item">
           {/* <a className="nav-link active" aria-current="page" href="#">Tech News</a> */}
           <Link  className="nav-link active" aria-current="page" to="/tech" >Tech News</Link>
-        </li>
-        <li className="nav-item">
-          {/* <a className="nav-link active" aria-current="page" href="#">Tech News</a> */}
-          <Link  className="nav-link active" aria-current="page" to="/check" >Check data</Link>
         </li>
         <li className="nav-item">
         
@@ -36,7 +32,7 @@ const Header = () => {
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success " type="submit">Search</button>
+        <button className="btn btn-outline-success " onClick="">Search</button>
       </form>
     </div>
   </div>

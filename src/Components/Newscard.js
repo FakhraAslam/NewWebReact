@@ -4,11 +4,11 @@ import{BrowserRouter,Route,Routes,Link,Outlet,useParams} from 'react-router-dom'
 import Detail from './Detail'
 const Newscard = (props) => {
     const { author } = useParams();
-    console.log(author);
+    console.log(author); 
     return (
     <div >
                 <div className="card w-25 " style={{marginLeft:"500px", marginTop:"10px"}} >
-                    <img src={props.urlToImage} className="card-img-top" alt="..." />
+                    <img src={props.urlToImage} className="card-img-top" alt="Image Not Found" />
                     <div className="card-body">
                         <h5 className="card-title">{props.title}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">{props.author}</h6>

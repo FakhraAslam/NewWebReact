@@ -3,7 +3,7 @@ const Detail=(props)=>{
    
     return(<div>
 <div className="card w-25 " style={{marginLeft:"500px", marginTop:"10px"}} >
-                    <img src={""} className="card-img-top" alt="..." />
+                    <img src={""} className="card-img-top" alt="Image Not found" />
                     <div className="card-body">
                         <h5 className="card-title">"hello"</h5>
                         <h6 className="card-subtitle mb-2 text-muted">""</h6>
