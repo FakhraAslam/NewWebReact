@@ -13,7 +13,7 @@ function App() {
   //fetch data of tech news 
   const [statetech, setState] = useState([]);
   const [stateTop, setStateTop] = useState([]);
-  const [stateSports, setStateSocial] = useState([]);
+  const [stateSocial ,setStateSocial] = useState([]);
   const [stateContry, setStateContry] = useState([]);
   useEffect(() => {
 
@@ -49,7 +49,7 @@ function App() {
             })} />
 
           <Route path="/sport" element={
-            stateSports.map((value, key) => {
+            stateSocial.map((value, key) => {
               return <Newscard key={key} {...value} />
             })} />
 
